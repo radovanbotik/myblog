@@ -10,6 +10,7 @@ import SectionDefaultStory from "./components/SectionDefaultStory";
 import ReviewDefault from "./components/ReviewDefault";
 import ReviewTop from "./components/ReviewTop";
 import Articles from "./components/Articles";
+import SubscribeToNewsletter from "./components/SubscribeToNewsletter";
 
 export default function Home() {
   const post: Post = {
@@ -193,6 +194,7 @@ export default function Home() {
       </div>
       <div className="z-10 mx-auto">
         <Articles data={section} />
+        <SubscribeToNewsletter />
       </div>
     </main>
   );

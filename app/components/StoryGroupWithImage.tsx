@@ -114,13 +114,11 @@ export default function StoryGroupWithImage({ data }: { data: Props }) {
               <span className="text-right font-light">
                 <a
                   href={data.posts[2].href}
-                  className="group-comments hover:text-blue-500"
+                  className="group-comments text-neutral-600 hover:text-blue-500"
                 >
                   <span>
-                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] text-neutral-600" />
-                    <span className="text-xs leading-6 tracking-wide text-neutral-600">
-                      26
-                    </span>
+                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px]" />
+                    <span className="text-xs leading-6 tracking-wide">26</span>
                   </span>
                   <span></span>
                 </a>
@@ -148,13 +146,11 @@ export default function StoryGroupWithImage({ data }: { data: Props }) {
               <span className="text-right font-light">
                 <a
                   href={data.posts[2].href}
-                  className="group-comments hover:text-blue-500"
+                  className="group-comments text-neutral-600 hover:text-blue-500"
                 >
                   <span>
-                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] text-neutral-600" />
-                    <span className="text-xs leading-6 tracking-wide text-neutral-600">
-                      26
-                    </span>
+                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px]" />
+                    <span className="text-xs leading-6 tracking-wide">26</span>
                   </span>
                   <span></span>
                 </a>
