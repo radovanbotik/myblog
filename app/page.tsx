@@ -4,6 +4,7 @@ import StoryStream from "./components/StoryStream";
 import StoryGroup from "./components/StoryGroup";
 import StoryGroupWithImage from "./components/StoryGroupWithImage";
 import MainStory from "./components/MainStory";
+import StreamHeader from "./components/StreamHeader";
 
 export default function Home() {
   const post = {
@@ -114,11 +115,14 @@ export default function Home() {
  
   const section = {title:'Just for you',posts:[post,post2,post3,post4,post5]}
   const section2 = {title:'Just for you',posts:[post,post2,post3]}
+  const header = {title:"Today's news",updated:new Date().toLocaleTimeString(),featuredStory:{href:'#',title:'heading'}}
+
   return (
     <main className="flex  flex-l flex-col bg-neutral-900">
       <div className="z-10 mx-auto relative mb-16 flex w-full max-w-lg flex-col px-10 md:mx-auto md:max-w-[560px] lg:mx-auto lg:max-w-5xl lg:flex-row lg:pr-0">
       <MainStory data={post}/>
       </div>
+      <StreamHeader data={header}/>
       <StoryDefault data={post} />
       <StoryDefault data={post} />
       <StoryDefault data={post} />

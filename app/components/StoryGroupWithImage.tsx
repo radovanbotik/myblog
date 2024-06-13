@@ -82,13 +82,13 @@ export default function StoryGroupWithImage({ data }: { data: Props }) {
             href={data.posts[0].href}
             // className="mb-2 border border-blue-500 pl-2.5"
           >
-            <div className="relative h-[182px] w-[240px] md:h-[244px] md:w-[250px] lg:-ml-[45px] lg:h-[235px] lg:w-[310px]">
+            <div className="relative -ml-5 mb-7 h-[182px] w-[275px] sm:w-[370px] md:h-[244px] md:w-[370px] lg:-ml-[45px] lg:h-[235px] lg:w-[330px]">
               <span className="absolute inset-0 m-0 box-border block h-[initial] w-[initial] overflow-hidden p-0">
                 <Image
                   src={image_dummy ?? data.posts[0].image.imageUrl}
                   alt={data.posts[0].image.alt}
                   fill={true}
-                  className="absolute inset-0 m-0 box-border block h-[initial] max-h-full min-h-full w-[initial] min-w-full max-w-full overflow-hidden rounded-sm object-cover p-0"
+                  className="absolute inset-0 m-0 box-border block h-[initial] max-h-full min-h-full w-[initial] min-w-full max-w-full overflow-hidden rounded-[4px] object-cover p-0"
                 />
               </span>
             </div>

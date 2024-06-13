@@ -73,7 +73,9 @@ function Content({ data }: { data: Post }) {
           </a>
         </div>
         <div className="inline-block text-neutral-400">
-          <time dateTime={data.datetime}>{data.date}</time>
+          <time dateTime={data.datetime}>
+            {data.date.slice(0, -", 2020".length)}
+          </time>
         </div>
       </div>
     </div>
