@@ -1,3 +1,23 @@
+type Image = {
+  href: string;
+  alt: string;
+};
+
+export type ImagePreview = {
+  images: Image[];
+  description: string;
+  imageSource?: string;
+};
+
+export type ExternalSource = {
+  title: string;
+  source: string;
+  image: {
+    imageUrl: string;
+    alt: string;
+  };
+};
+
 export type Post = {
   id: number;
   title: string;
@@ -5,6 +25,7 @@ export type Post = {
   description: string;
   date: string;
   datetime: string;
+  content: string;
   category: {
     title: string;
     href: string;
@@ -19,4 +40,6 @@ export type Post = {
     href: string;
     imageUrl: string;
   };
+  externalSource?: ExternalSource;
+  imagePreview?: ImagePreview;
 };

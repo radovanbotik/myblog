@@ -5,10 +5,11 @@ import {
   ChatBubbleOvalLeftIcon,
   LinkIcon,
 } from "@heroicons/react/24/outline";
-import { Post } from "../lib/types";
+import { ExternalSource, Post } from "../lib/types";
 import { Hanken_Grotesk } from "next/font/google";
 import image_dummy from "../../public/images/image_dummy.jpg";
 import Image from "next/image";
+import ImagePreview from "./ImagePreview";
 
 const hanken_grotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -31,16 +32,38 @@ function Navigation({ data }: { data: Post }) {
   );
 }
 
-const externalSource = {
-  content:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil tempore fugiat voluptatum officia enim sunt, harum dolorum, necessitatibus voluptatem rerum optio?<a href='#'>Incidunt inventore nostrum provident est fugiat quos</a>, reprehenderit dolore ipsam enim dicta nemo illo officia veniam nihil. Cumque veritatis, est eius voluptates nisi illum esse expedita, a ea illo quaerat reprehenderit architecto asperiores deserunt cupiditate sequi minus minima? Voluptate rem voluptatibus neque est architecto ab non maxime nesciunt ducimus cumque. Amet modi magni laboriosam neque minus labore laudantium tempore soluta ullam maiores perspiciatis.",
-  title: "This is title of article from external source. | ExternalSource",
-  source: "externalsource",
-  image: {
-    imageUrl: null,
-    alt: "this is image.",
-  },
-};
+function ExtSource({ data }: { data: ExternalSource }) {
+  return (
+    <>
+      <div className="pt-3">
+        <div className="relative text-neutral-300">
+          <a
+            href="#"
+            className="text-base shadow-[inset_0_-1px_0_0_rgba(59,130,246,1),inset_0_-2px_0_0_rgba(59,130,246,0.4)] hover:text-blue-500"
+            target="_blank"
+          >
+            {data.title}
+          </a>
+          <p className="pointer-events-none mt-2.5 text-xs font-bold uppercase tracking-widest">
+            [{data.source}]
+          </p>
+        </div>
+        {/* Embedded image from social media */}
+        <div className="relative mb-0 min-h-[240px] w-full overflow-x-hidden md:max-w-[460px]">
+          <div className="mx-2.5 flex w-full max-w-[550px]">
+            <div className="static block h-[618px] w-[446px] flex-grow"></div>
+            <Image
+              src={image_dummy}
+              alt={data.image.alt}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 function Content({ data }: { data: Post }) {
   return (
@@ -74,36 +97,16 @@ function Content({ data }: { data: Post }) {
       <div className="">
         <span className="inline pr-1 text-lg font-bold">{data.title}</span>
         <p
-          dangerouslySetInnerHTML={{ __html: externalSource.content }}
+          dangerouslySetInnerHTML={{ __html: data.content }}
           className={`inline ${hanken_grotesk.className} text-neutral-300 [&_a:hover]:text-blue-500 [&_a]:shadow-[inset_0_-1px_0_0_rgba(115,115,115,1),inset_0_-2px_0_0_rgba(163,163,163,0.4)]`}
         ></p>
       </div>
-      <div className="pt-3">
-        <div className="relative text-neutral-300">
-          <a
-            href="#"
-            className="text-base shadow-[inset_0_-1px_0_0_rgba(59,130,246,1),inset_0_-2px_0_0_rgba(59,130,246,0.4)] hover:text-blue-500"
-            target="_blank"
-          >
-            {externalSource.title}
-          </a>
-          <p className="pointer-events-none mt-2.5 text-xs font-bold uppercase tracking-widest">
-            [{externalSource.source}]
-          </p>
+      {data.externalSource && <ExtSource data={data.externalSource} />}
+      {data.imagePreview && (
+        <div className="pt-3">
+          <ImagePreview data={data.imagePreview} />
         </div>
-        {/* Embedded image from social media */}
-        <div className="relative mb-0 min-h-[240px] w-full overflow-x-hidden md:max-w-[460px]">
-          <div className="mx-2.5 flex w-full max-w-[550px]">
-            <div className="static block h-[618px] w-[446px] flex-grow"></div>
-            <Image
-              src={externalSource.image.imageUrl ?? image_dummy}
-              alt={externalSource.image.alt}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

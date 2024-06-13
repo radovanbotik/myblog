@@ -3,7 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Poly, Syne, DM_Sans, Archivo } from "next/font/google";
 
-const poly = Poly({ subsets: ["latin"], weight: ["400"] });
+const poly = Poly({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic", "normal"],
+});
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
