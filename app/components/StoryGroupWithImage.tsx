@@ -16,8 +16,9 @@ type Props = {
 };
 
 export default function StoryGroupWithImage({ data }: { data: Props }) {
+  // add sticky lg:sticky
   return (
-    <div className="ml:auto relative mb-10 ml-[65px] mt-20 min-h-[475px] w-80 max-w-lg rounded-md bg-teal-400 p-5 text-black sm:w-[410px] lg:sticky lg:top-10 lg:ml-0 lg:min-h-[600px] lg:overflow-hidden lg:rounded-3xl">
+    <div className="ml:auto relative mb-10 ml-[65px] mt-20 min-h-[475px] w-80 max-w-lg rounded-md bg-teal-400 p-5 text-black sm:w-[410px] lg:top-10 lg:ml-0 lg:min-h-[600px] lg:overflow-hidden lg:rounded-3xl">
       <h2
         className={`${odibee_sans.className} pointer-events-none absolute left-[-86px] top-[-25px] -z-10 flex rotate-180 text-[96px] tracking-tighter text-white lg:hidden`}
         style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}

@@ -1,8 +1,10 @@
+// import {ChatBubbleOvalLeftIcon,LinkIcon} from "@heroicons/react/20/solid";
+
 import {
+  ChatBubbleLeftIcon,
   ChatBubbleOvalLeftIcon,
-  ChatBubbleLeftRightIcon,
   LinkIcon,
-} from "@heroicons/react/20/solid";
+} from "@heroicons/react/24/outline";
 import { Post } from "../lib/types";
 import { Hanken_Grotesk } from "next/font/google";
 import image_dummy from "../../public/images/image_dummy.jpg";
@@ -22,7 +24,7 @@ function Navigation({ data }: { data: Post }) {
       </div>
       <div className="group relative mt-3 flex w-7 justify-center text-neutral-600 hover:text-white">
         <a href={data.href} aria-label={data.title}>
-          <ChatBubbleOvalLeftIcon className="h-6 w-6 fill-transparent stroke-neutral-400 group-hover:stroke-white" />
+          <ChatBubbleOvalLeftIcon className="h-6 w-6 fill-transparent" />
         </a>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
+import { ChatBubbleLeftIcon } from "@heroicons/react/24/outline";
 import { Post } from "../lib/types";
 import { Hanken_Grotesk } from "next/font/google";
 import image_dummy from "../../public/images/image_dummy.jpg";
@@ -72,7 +72,7 @@ function Content({ data }: { data: Post }) {
               aria-label={data.description}
               className="group/comments hover:text-blue-500"
             >
-              <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] fill-transparent stroke-neutral-400 group-hover/comments:stroke-blue-500" />
+              <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px]" />
               <span className="text-xs leading-6 tracking-wide">26</span>
             </a>
           </span>

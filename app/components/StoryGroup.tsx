@@ -1,4 +1,4 @@
-import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
+import { ChatBubbleLeftIcon } from "@heroicons/react/24/outline";
 import { Post } from "../lib/types";
 import { Squada_One, Big_Shoulders_Text, Odibee_Sans } from "next/font/google";
 
@@ -52,7 +52,7 @@ export default function StoryGroup({ data }: { data: Props }) {
                   aria-label={post.description}
                   className="group/comments hover:text-blue-500"
                 >
-                  <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] fill-transparent stroke-neutral-600 group-hover/comments:stroke-blue-500" />
+                  <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px]" />
                   <span className="text-xs leading-6 tracking-wide">26</span>
                 </a>
               </span>
