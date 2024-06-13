@@ -7,6 +7,7 @@ import MainStory from "./components/MainStory";
 import StreamHeader from "./components/StreamHeader";
 import { Post } from "./lib/types";
 import SectionDefaultStory from "./components/SectionDefaultStory";
+import ReviewDefault from "./components/ReviewDefault";
 
 export default function Home() {
   const post: Post = {
@@ -184,6 +185,7 @@ export default function Home() {
       </div>
       <SectionDefaultStory data={post} />
       <SectionDefaultStory data={post} />
+      <ReviewDefault data={post} />
     </main>
   );
 }
