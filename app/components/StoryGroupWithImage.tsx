@@ -81,7 +81,7 @@ export default function StoryGroupWithImage({ data }: { data: Props }) {
             href={data.posts[0].href}
             // className="mb-2 border border-blue-500 pl-2.5"
           >
-            <div className="lg:-ml[45px] relative h-[182px] w-[275px] md:h-[244px] md:w-[370px] lg:h-[235px] lg:w-[352px]">
+            <div className="relative h-[182px] w-[240px] md:h-[244px] md:w-[250px] lg:-ml-[45px] lg:h-[235px] lg:w-[310px]">
               <span className="absolute inset-0 m-0 box-border block h-[initial] w-[initial] overflow-hidden p-0">
                 <Image
                   src={image_dummy ?? data.posts[0].image.imageUrl}
@@ -93,38 +93,75 @@ export default function StoryGroupWithImage({ data }: { data: Props }) {
             </div>
           </a>
         </li>
-        <li className="">aaaa</li>
-        <li className="">aaaa</li>
-      </ul>
-      {/* <ol className="w-full [counter-reset:li] lg:mt-5 lg:w-[320px]">
-        {data.posts.slice(0, 2).map((post) => (
-          <li
-            key={post.id}
-            className="mb-5 border-b border-b-blue-500 pb-5 pl-7 before:absolute before:-left-[4px] before:ml-3.5 before:grid before:h-6 before:w-6 before:place-content-center before:rounded-full before:bg-blue-600 before:text-center before:text-sm before:text-teal-400 before:content-[counter(li)] before:[counter-increment:li] last:mb-0 last:border-b-0 last:pb-0"
-          >
-            <a href={post.href} className="hover:text-blue-500">
-              <h3 className="mb-1 text-lg font-medium leading-tight tracking-wide">
-                {post.title}
-              </h3>
+        <li className="last:border:0 md:w[calc(100%-20px)] lg:last-mb-2.5 mb-2.5 w-[240px] border-b border-blue-500 pb-2.5 before:absolute before:left-5 before:flex before:h-4 before:items-center before:text-xl before:text-blue-500 before:content-['•'] last:mb-0 last:pb-0 lg:w-[286px] lg:before:pl-[7px]">
+          <a href={data.posts[2].href} className="hover:text-blue-500">
+            <h3 className="mb-1 font-medium leading-[1.1] tracking-widest">
+              {data.posts[2].title}
+            </h3>
+          </a>
+          <p className="text-xs uppercase tracking-widest">
+            <a href={data.posts[2].author.href}>
+              <span className="mr-2 text-neutral-600">
+                {data.posts[2].author.name}
+              </span>
             </a>
-            <p className="inline-block text-xs uppercase text-neutral-600">
-              <span className="mr-2">{post.author.name}</span>
-              <time dateTime={post.datetime}>{post.date}</time>
-              <span>
-                <span className="mx-2">|</span>
+            <span className="font-light text-neutral-600">
+              {data.posts[2].date.slice(0, -", 2020".length)}
+            </span>
+            <span>
+              <span className="mx-2">|</span>
+              <span className="text-right font-light">
                 <a
-                  href={post.href}
-                  aria-label={post.description}
-                  className="group/comments hover:text-blue-500"
+                  href={data.posts[2].href}
+                  className="group-comments hover:text-blue-500"
                 >
-                  <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] fill-transparent stroke-neutral-600 group-hover/comments:stroke-blue-500" />
-                  <span className="text-xs leading-6 tracking-wide">26</span>
+                  <span>
+                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] text-neutral-600" />
+                    <span className="text-xs leading-6 tracking-wide text-neutral-600">
+                      26
+                    </span>
+                  </span>
+                  <span></span>
                 </a>
               </span>
-            </p>
-          </li>
-        ))}
-      </ol> */}
+            </span>
+          </p>
+        </li>
+        <li className="last:border:0 md:w[calc(100%-20px)] lg:last-mb-2.5 mb-2.5 w-[240px] border-b border-blue-500 pb-2.5 before:absolute before:left-5 before:flex before:h-4 before:items-center before:text-xl before:text-blue-500 before:content-['•'] last:mb-0 last:pb-0 lg:w-[286px] lg:before:pl-[7px]">
+          <a href={data.posts[2].href} className="hover:text-blue-500">
+            <h3 className="mb-1 font-medium leading-[1.1] tracking-widest">
+              {data.posts[2].title}
+            </h3>
+          </a>
+          <p className="text-xs uppercase tracking-widest">
+            <a href={data.posts[2].author.href}>
+              <span className="mr-2 text-neutral-600">
+                {data.posts[2].author.name}
+              </span>
+            </a>
+            <span className="font-light text-neutral-600">
+              {data.posts[2].date.slice(0, -", 2020".length)}
+            </span>
+            <span>
+              <span className="mx-2">|</span>
+              <span className="text-right font-light">
+                <a
+                  href={data.posts[2].href}
+                  className="group-comments hover:text-blue-500"
+                >
+                  <span>
+                    <ChatBubbleLeftIcon className="mr-2 inline h-3.5 w-3.5 -translate-y-[0.5px] text-neutral-600" />
+                    <span className="text-xs leading-6 tracking-wide text-neutral-600">
+                      26
+                    </span>
+                  </span>
+                  <span></span>
+                </a>
+              </span>
+            </span>
+          </p>
+        </li>
+      </ul>
     </div>
   );
 }
