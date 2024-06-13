@@ -9,6 +9,7 @@ import { Post } from "./lib/types";
 import SectionDefaultStory from "./components/SectionDefaultStory";
 import ReviewDefault from "./components/ReviewDefault";
 import ReviewTop from "./components/ReviewTop";
+import Articles from "./components/Articles";
 
 export default function Home() {
   const post: Post = {
@@ -189,6 +190,9 @@ export default function Home() {
       <ReviewDefault data={post} />
       <div className="z-10 mx-auto">
         <ReviewTop data={post} />
+      </div>
+      <div className="z-10 mx-auto">
+        <Articles data={section} />
       </div>
     </main>
   );
