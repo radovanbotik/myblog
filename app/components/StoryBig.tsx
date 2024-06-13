@@ -1,8 +1,8 @@
 import { ChatBubbleLeftIcon } from "@heroicons/react/24/outline";
 import { Post } from "../lib/types";
-import { Hanken_Grotesk } from "next/font/google";
 import image_dummy from "../../public/images/image_dummy.jpg";
 import Image from "next/image";
+import { Hanken_Grotesk } from "next/font/google";
 
 const hanken_grotesk = Hanken_Grotesk({
   subsets: ["latin"],
