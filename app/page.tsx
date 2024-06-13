@@ -3,13 +3,14 @@ import StoryBig from "./components/StoryBig";
 import StoryStream from "./components/StoryStream";
 import StoryGroup from "./components/StoryGroup";
 import StoryGroupWithImage from "./components/StoryGroupWithImage";
+import MainStory from "./components/MainStory";
 
 export default function Home() {
   const post = {
     id: 1,
     title: "This is a title let's make it longer.",
     href: "#",
-    description: "This is a description it might be bit lengtier than title",
+    description: "This is a description it might be bit lengtier than title. This is th second line lets see how it translates to design.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
@@ -115,6 +116,9 @@ export default function Home() {
   const section2 = {title:'Just for you',posts:[post,post2,post3]}
   return (
     <main className="flex  flex-l flex-col bg-neutral-900">
+      <div className="z-10 mx-auto relative mb-16 flex w-full max-w-lg flex-col px-10 md:mx-auto md:max-w-[560px] lg:mx-auto lg:max-w-5xl lg:flex-row lg:pr-0">
+      <MainStory data={post}/>
+      </div>
       <StoryDefault data={post} />
       <StoryDefault data={post} />
       <StoryDefault data={post} />
