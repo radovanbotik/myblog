@@ -30,18 +30,15 @@ function Button({
     backwards: "left-6",
     forwards: "right-6",
   };
-
-  function getIcon(direction: "backwards" | "forwards") {
-    if (direction === "backwards") return ChevronLeftIcon;
-    if (direction === "forwards") return ChevronRightIcon;
-  }
-
-  const Icon = getIcon(direction) as typeof ChevronLeftIcon;
-
   const iconStyles = {
     backwards: "left-[calc(50%-1px)]",
     forwards: "left-[calc(50%+1px)]",
   };
+  function getIcon(direction: "backwards" | "forwards") {
+    if (direction === "backwards") return ChevronLeftIcon;
+    if (direction === "forwards") return ChevronRightIcon;
+  }
+  const Icon = getIcon(direction) as typeof ChevronLeftIcon;
 
   return (
     <button
